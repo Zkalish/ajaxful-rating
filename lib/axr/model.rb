@@ -170,7 +170,7 @@ module AjaxfulRating # :nodoc:
     #
     # It may works as an alias for +dimension_rates+ methods.
     def rates(dimension = nil)
-      unless dimension.blank?
+      if dimension.present?
         send("#{dimension}_rates")
       else
         rates_without_dimension
